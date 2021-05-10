@@ -12,4 +12,11 @@ Rails.application.routes.draw do
   
   resources:users
   resources:topics
+  
+  get 'favorites/index'
+  post '/favorites', to: 'favorites#create'
+  
+  #いいね解除のためのルーティングを追加
+  delete "/favorites", to: "favorites#destroy"
+  #いいねを外すのにもリンクを付与するためにビューを編集する(views/topics/index.html.erb)
 end

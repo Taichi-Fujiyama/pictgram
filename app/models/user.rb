@@ -6,4 +6,12 @@ class User < ApplicationRecord
   
   has_secure_password
   has_many :topics
+  has_many :favorites 
+  has_many :favorite_topics, through: :favorites,source: "topic"
+  
+  #テーブルに関するやりとりなので、モデルで以下の内容を定義する
+  #def favorited_by?(topic_id)
+   # favorites.where(topic_id: topic_id).exists?
+  #end
+  
 end
