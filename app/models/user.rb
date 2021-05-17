@@ -14,4 +14,6 @@ class User < ApplicationRecord
    # favorites.where(topic_id: topic_id).exists?
   #end
   
+  has_many :comments
+  has_many :comments_topics,through: :comments, source: 'comment'
 end

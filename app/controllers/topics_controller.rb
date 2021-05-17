@@ -21,6 +21,32 @@ class TopicsController < ApplicationController
     end
   end
   
+  def comment_create
+    # 下記内容を追加
+    @comment = Comment.new(comment: params[:comment])
+    @comment.user_id = current_user.id
+    
+    # if @comment.save
+    #   redirect_to topics_path, success: 'コメントしました'
+    # else
+    #   flash.now[:danger] = "コメントに失敗しました"
+    # end
+    # ここまで追加
+  end
+  
+  # 追加したアクション
+  def comment
+    @comment = Comment.new(comment: params[:comment])
+    @comment.user_id = current_user.id
+    @comment.topic_id = params[:topic_id]
+    if @comment.save
+      redirect_to topics_path, success: 'コメントしました'
+    else
+      flash.now[:danger] = "コメントに失敗しました"
+    end
+    
+  end
+  # ここまで追加
   
   private
   def topic_params

@@ -23,8 +23,11 @@
              <% end %>
             <% end %>
             
+            <%= link_to topics_comment_path(topic_id: topic.id) do %>
+                <i class="far fa-comment comment-btn"></i>
+              <% end %>
             <%#= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
-            <i class="far fa-comment comment-btn"></i>
+            
             
             <p class="topic-text">
               <%= topic.description %>

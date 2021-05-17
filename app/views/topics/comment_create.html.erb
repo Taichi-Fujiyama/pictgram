@@ -1,0 +1,19 @@
+<div class="main comments-new">
+  <div class="container">
+    <h1 class="form-heading">コメントする</h1>
+    
+    <!--form_tagメソッドを用いて、データの送信先を指定-->
+    <%= form_tag("/topics/comment") do %>
+    <div class="form">
+      <div class="form-body">
+        <textarea name = "comment"></textarea>
+          <div class ="btn">
+           <input type="submit" value="コメント">
+          </div>
+          <%= hidden_field_tag :topic_id,params[:topic_id] %>
+      </div>
+    </div>
+    <% end %>
+    
+  </div>
+</div>
