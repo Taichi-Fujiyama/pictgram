@@ -32,6 +32,20 @@
             <p class="topic-text">
               <%= topic.description %>
             </p>
+            
+            <div class="comment-index-wrapper">  
+              <div class = "comment-spot">
+                <p>コメント</p>
+              </div>
+              
+              <% topic.comments.each do |comment| %>
+                <div class = "topic-index-item">
+                  <%= comment.comment %>
+                </div>
+              <% end %>
+              
+            </div>  
+            
           </div>
         </div>
       </div>
