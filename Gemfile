@@ -66,6 +66,7 @@ end
 
 group :production do
   gem "pg"
+  gem 'rails_12factor'
 end
 
 
@@ -82,3 +83,4 @@ gem "carrierwave"
 gem "font-awesome-sass"
 
 gem "fog-aws"
+
